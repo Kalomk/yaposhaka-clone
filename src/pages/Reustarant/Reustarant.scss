@@ -1,0 +1,68 @@
+.restaurant-description {
+  max-width: 655px;
+  margin: 0 auto 70px;
+  .content {
+    margin-bottom: 22px;
+    line-height: 1.75;
+    font-size: 16px;
+    p {
+      margin: 10px 0;
+    }
+  }
+  .btn {
+    padding: 15px 20px;
+    display: block;
+  }
+  .menu-block {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.restaurant-contact {
+  position: relative;
+  margin-bottom: 144px;
+  display: block;
+  .contact {
+    width: 38%;
+    padding: 40px 5% 35px 7.8%;
+    background: #ebf322;
+    font-size: 16px;
+    max-height: 600px;
+    & > * div {
+      margin-bottom: 5px;
+    }
+    .title {
+      margin: 0 0 28px;
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 1;
+    }
+    .metro {
+      &::before {
+        content: 'M';
+        display: inline-block;
+        vertical-align: top;
+        width: 24px;
+        height: 24px;
+        margin: -2px 5px 0 0;
+        color: #e50278;
+        text-align: center;
+        font-size: 12px;
+        line-height: 24px;
+        border-radius: 50%;
+        border: 1px solid #e50278;
+      }
+      &:not(:first-of-type) {
+        margin-top: 50px;
+      }
+    }
+  }
+  .restaurant-map {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 62%;
+  }
+}

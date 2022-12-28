@@ -1,0 +1,31 @@
+.mCSB_container {
+  overflow: hidden;
+  width: auto;
+  height: auto;
+}
+.mCustomScrollbar {
+  -ms-touch-action: pinch-zoom;
+  touch-action: pinch-zoom;
+}
+.page-title {
+  margin: 0 auto 56px;
+  max-width: 900px;
+  font-size: 50px;
+  font-weight: 600;
+}
+p {
+  margin: 0 0 30px;
+  line-height: 1.75;
+  font-size: 16px;
+}
+iframe {
+  width: 100%;
+}
+.mCustomScrollBox {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  max-width: 100%;
+  outline: 0;
+  direction: ltr;
+}

@@ -1,0 +1,67 @@
+.advantages-text {
+  display: inline-block;
+  vertical-align: middle;
+  width: 43%;
+  padding-left: 110px;
+  .advantage {
+    cursor: pointer;
+    position: relative;
+    padding: 22px 0 25px;
+    font-size: 16px;
+    line-height: 1.5;
+    &.active {
+      &:hover {
+        &::before {
+          animation: allHeight 0.3s ease;
+        }
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 100%;
+        left: -8px;
+        width: 16px;
+        background: #ebf322;
+        height: 100%;
+        animation: progress 4.4s ease;
+      }
+      &:nth-child(3n + 2) {
+        &:before {
+          background: #b9cbe8;
+        }
+      }
+      &:nth-child(3n + 3) {
+        &:before {
+          background: #ea5224;
+        }
+      }
+    }
+    .inner {
+      position: relative;
+      .title {
+        display: block;
+        margin: 0 0 7px;
+        font-size: 20px;
+        line-height: 1.2;
+      }
+    }
+  }
+  @keyframes progress {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  @keyframes allHeight {
+    0% {
+      height: 100%;
+      width: 0;
+    }
+    100% {
+      width: 16px;
+    }
+  }
+}

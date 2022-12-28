@@ -1,0 +1,31 @@
+.item_nav__submenu {
+  display: block;
+  top: 100%;
+  position: absolute;
+  font-size: 0;
+  left: -20px;
+  right: -20px;
+  margin: 0 0 22px 0;
+  overflow: hidden;
+  list-style-type: none;
+  border-top: 4px solid #ebf322;
+  box-shadow: 1px 3px 3px 0 rgb(0 0 0 / 10%), -1px 3px 3px 0 rgb(0 0 0 / 10%);
+  background: #f3f3f3;
+  transition: max-height 0.5s ease-in 0s;
+  &.hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+  & > li {
+    display: inline-block;
+    vertical-align: top;
+    width: 33.33%;
+    padding: 0 30px 22px;
+    text-align: center;
+    padding: 0 30px 10px;
+    margin-top: 0;
+    a {
+      font-size: 16px;
+    }
+  }
+}

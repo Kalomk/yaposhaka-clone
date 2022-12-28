@@ -1,0 +1,24 @@
+.product-grid {
+  background: url('https://www.yaposhka.kh.ua/static/version1670503576/frontend/Yaposhka/theme/uk_UA/images/fear-style/other-style-1366.png')
+    9590px -150px repeat-y;
+  position: relative;
+  padding: 0 10000px;
+  margin: 0 -10000px;
+  transition: background-position 0.3s ease-out;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 92%, #fff 100%, #fff 100%);
+  }
+}
+.product-list {
+  list-style: none;
+  padding: unset;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}

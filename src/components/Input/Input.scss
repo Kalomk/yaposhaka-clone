@@ -1,0 +1,68 @@
+.hoshi-wrap {
+  display: inline-block;
+  position: relative;
+  padding: 15px 0 0;
+  overflow: hidden;
+  &.focus {
+    .hoshi-label {
+      font-size: 14px;
+      padding: 0 10px 0;
+      color: #7f7f7f;
+    }
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    z-index: 2;
+    background: #ebf322;
+    -ms-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+    transition: transform 0.2s ease-out;
+  }
+  .hoshi-input {
+    width: 100%;
+    font-size: 18px;
+    line-height: 1.2;
+    outline: 0;
+    position: relative;
+    padding: 10px 10px 14px;
+    border: 0;
+    z-index: 1;
+    border-bottom: 1px solid #ccc;
+  }
+  .hoshi-label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 100%;
+    padding: 27px 10px 14px;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #404040;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: -50;
+    cursor: text;
+    pointer-events: none;
+    transition: font-size 0.2s ease-out, padding 0.2s ease-out, color 0.2s ease-out,
+      opacity 0.2s ease-out;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    z-index: 3;
+    background: #f50000;
+    -ms-transform: translate(-101%, 0);
+    transform: translate(-101%, 0);
+    transition: transform 0.2s ease-out;
+  }
+}

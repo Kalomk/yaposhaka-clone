@@ -1,0 +1,118 @@
+.miniCart {
+  @media (min-width: 1027px) {
+    visibility: visible;
+  }
+  @media (max-width: 1366px) {
+    transform: translate(335px, 0);
+  }
+  @media (max-width: 1023px) {
+    width: 100%;
+    -ms-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+    transition: transform 0.4s ease-out, width 0s 0.4s, visibility 0s 0.4s;
+  }
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 455px;
+  height: 100%;
+  visibility: hidden;
+  z-index: 10;
+  background: #f3f3f3;
+  -ms-transform: translate(305px, 0);
+  transform: translate(305px, 0);
+  transition: transform 0.4s ease-out, visibility 0s 0.4s;
+  &__header {
+    height: 120px;
+    overflow: hidden;
+    background: #ebf322;
+    svg {
+      width: 59px;
+      height: 68px;
+      stroke-width: 2px;
+    }
+  }
+  &__content {
+    height: calc(100% - 227px);
+    outline: 1px solid transparent;
+    overflow: auto;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 25px;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-out, visibility 0s 0.3s;
+      background: linear-gradient(to bottom, #f3f3f3 0, rgba(243, 243, 243, 0) 100%);
+    }
+  }
+  &__total {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 90px;
+    padding: 22px 36px 25px 158px;
+    background: #ebf322;
+    &-img {
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      transition: left 0.3s ease-out;
+      @media (max-width: 1366px) {
+        margin-left: -10px;
+      }
+      svg {
+        width: 59px;
+        height: 68px;
+        stroke-width: 2px;
+      }
+    }
+  }
+  .title-miniCart {
+    float: left;
+    position: relative;
+    width: 150px;
+    height: 120px;
+    padding: 51px 0 0;
+    color: #000;
+    font-weight: 500;
+    text-align: center;
+    transition: width 0.3s ease-out;
+    @media (max-width: 1366px) {
+      margin-left: -10px;
+    }
+    &__img {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    .empty-cart {
+      &__counter-number {
+        display: block;
+        min-height: 24px;
+        width: 34px;
+        margin: 10px auto 11px;
+        color: #fff;
+        position: relative;
+        z-index: 5;
+      }
+      &__counter-label {
+        @media (min-width: 1024px) {
+          opacity: 1;
+        }
+        display: block;
+        min-height: 24px;
+        transition: opacity 0.3s ease-out;
+      }
+    }
+  }
+}

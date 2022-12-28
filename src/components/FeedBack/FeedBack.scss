@@ -1,0 +1,110 @@
+.feedback-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 25;
+  width: 82.7%;
+  max-width: 580px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  visibility: hidden;
+  -ms-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+  transition: transform 0.4s ease-out, visibility 0s 0.4s;
+  background: #fff;
+  .feedback-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    h3 {
+      font-size: 36px;
+      line-height: 1;
+      font-weight: 500;
+    }
+    .title {
+      margin: 0 0 20px;
+      font-weight: 500;
+    }
+    .intro {
+      margin: 0 auto 48px;
+      color: #404040;
+    }
+  }
+
+  &:before {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    top: 160px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 0.3s ease-out;
+  }
+  &.active {
+    visibility: visible;
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    transition: transform 0.4s ease-out, visibility 0s 0s;
+  }
+  .form {
+    .error-wrap {
+      position: relative;
+      margin: 0 0 38px;
+    }
+  }
+  .btn.yellow {
+    color: #000;
+    background: #ebf322;
+  }
+  .btn {
+    display: inline-block;
+    padding: 15px 38px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.075em;
+    outline: 0;
+    border: 3px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease-out;
+  }
+  .closer {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 40px;
+    right: 40px;
+    opacity: 1;
+    z-index: 2;
+    transition: opacity 0.3s ease-out;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 132%;
+      height: 1px;
+      background: #7f7f7f;
+    }
+    &::before {
+      left: 1px;
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      -ms-transform-origin: 0 0;
+      transform-origin: 0 0;
+    }
+    &::after {
+      right: 1px;
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -ms-transform-origin: 100% 0;
+      transform-origin: 100% 0;
+    }
+  }
+}

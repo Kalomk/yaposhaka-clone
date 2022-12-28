@@ -1,0 +1,46 @@
+.gallery-wrap {
+  margin-bottom: 70px;
+  padding: 0 20px;
+  @media (max-width: 1023px) {
+    margin-bottom: 32px;
+  }
+}
+.advantages-wrapper {
+  padding: 40px 0 110px;
+  transition: padding 0.3s ease-out, background 0.3s ease-out;
+}
+
+.product-gallery {
+  overflow: hidden;
+  .header-gallery {
+    &__title {
+      font-size: 50px;
+      line-height: 0.8125;
+      margin-bottom: 21px;
+      font-weight: 700;
+    }
+  }
+  .tabs-nav {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 5px 78px;
+    list-style-type: none;
+    .tab-link-wrap {
+      display: inline-block;
+      margin: 0 5px;
+      &.active {
+        .tab-link {
+          color: #000;
+          border-bottom: 4px solid #ebf322;
+        }
+      }
+      .tab-link {
+        cursor: pointer;
+        font-size: 20px;
+        display: inline-block;
+        padding: 0 10px;
+        color: #7f7f7f;
+      }
+    }
+  }
+}

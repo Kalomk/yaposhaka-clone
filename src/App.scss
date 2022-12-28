@@ -1,0 +1,118 @@
+@import './styles/fonts.scss';
+@import './styles/normalize.scss';
+
+.btn {
+  display: inline-block;
+  padding: 15px 38px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.075em;
+  outline: 0;
+  border: 3px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease-out;
+  &.yellow {
+    color: #000;
+    background: #ebf322;
+    &:hover {
+      color: #000;
+      background: #f5ff00;
+    }
+  }
+  &-complain {
+    border-width: 2px;
+    font-weight: 500;
+    &:hover {
+      color: #000;
+      border-color: #ccc;
+    }
+  }
+  &.wayra {
+    position: relative;
+    overflow: hidden;
+    border: 3px solid;
+    box-sizing: border-box;
+    background: transparent;
+    transition: border-color 0.3s;
+    &-yellow {
+      border-color: #ebf322;
+      &:before {
+        background: #ebf322;
+      }
+    }
+    &:hover {
+      transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+      &:before {
+        opacity: 1;
+        transform: rotate3d(0, 0, 1, 0deg);
+        transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 150%;
+      height: 100%;
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+      -ms-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+      transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+      z-index: -5;
+    }
+    &-grey {
+      border-color: #d9d9d9;
+      &:before {
+        background: #d9d9d9;
+      }
+    }
+    &-inner {
+      position: relative;
+      z-index: 50;
+      color: #000;
+    }
+  }
+}
+
+body {
+  font-size: calc(16px / 1.3);
+  font-weight: 400;
+  font-family: 'Gotham Pro';
+  @media (max-width: 1023px) {
+    font-size: 15px;
+  }
+  a {
+    @media (any-hover: hover) {
+      &:hover {
+        color: #e50278;
+        outline-width: 0;
+      }
+    }
+  }
+  &.lock {
+    overflow: hidden;
+    &::before {
+      content: '';
+      position: fixed;
+      transition: all 0.5s ease-in 0s;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 20;
+    }
+  }
+}
+.container-small {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
