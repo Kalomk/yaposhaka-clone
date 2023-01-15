@@ -9,6 +9,7 @@ type ProductItemProps = {
   img: Images;
   listOfDescription?: string[];
   count: number;
+  topLabel?: string[];
 };
 
 interface Images {
@@ -30,27 +31,34 @@ const ProductItem: React.FC<ProductItemProps> = ({
   img,
   listOfDescription,
   count,
+  topLabel,
 }) => {
   return (
     <li className="product-item">
       <div className="product-item__content">
         <div className="product-item__image-wrap">
           <picture>
-            {img.desc.map((item, id) => (
-              <picture key={id}>
+            {img.desc.map((item) => (
+              <picture key={item}>
                 <source srcSet={item.webp} type="image/webp" />
                 <img className="photo image" src={item.jpg} alt={name} loading="lazy" />
               </picture>
             ))}
-            {img.mob.map((item, id) => (
-              <picture key={id}>
+            {img.mob.map((item) => (
+              <picture key={item}>
                 <source srcSet={item.webp} type="image/webp" />
                 <img className="photo image" src={item.jpg} alt={name} loading="lazy" />
               </picture>
             ))}
           </picture>
         </div>
-        <div className="product-item__top-label"></div>
+        {topLabel && (
+          <div className="top-labels-wrap">
+            {topLabel.map((item) => (
+              <span className={`label-${item} item-label`}>{item}</span>
+            ))}
+          </div>
+        )}
         <div className="product-item__description">
           {description ? (
             <p className="description-content">
@@ -60,7 +68,7 @@ const ProductItem: React.FC<ProductItemProps> = ({
             <ul className="description-content">
               {listOfDescription &&
                 listOfDescription.map((item) => (
-                  <li style={{ textAlign: 'justify' }}>
+                  <li key={item} style={{ textAlign: 'justify' }}>
                     <span style={{ fontSize: 'medium' }}>{item}</span>
                   </li>
                 ))}

@@ -1,9 +1,9 @@
 import './ProductGallery.scss';
-import ProductItem from '../ProductItem/ProductIte';
+import ProductItem from '../ProductItem/ProductItem';
 
 const ProductGallery = ({ title, filters, items }) => {
   return (
-    <div className="product-gallery">
+    <div className={'product-gallery'}>
       <div className="product-gallery__header header-gallery container">
         <div className="header-gallery__title container-small">{title}</div>
       </div>
@@ -15,7 +15,7 @@ const ProductGallery = ({ title, filters, items }) => {
             </li>
           ))}
         </ul>
-        <div className="product-grid">
+        <div className={title === 'Хіти' ? 'product-grid background' : 'product-grid'}>
           <ul className="product-list">
             {items.map((item) => (
               <ProductItem key={item.name} {...item} />

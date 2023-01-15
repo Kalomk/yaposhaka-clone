@@ -11,6 +11,7 @@ interface CustomSliderProps {
   slideIndex?: number;
   fade: boolean;
   autoplay?: boolean;
+  draggable?: boolean;
 }
 type Trigger = {
   title: string;
@@ -33,6 +34,7 @@ const CustomSlider: React.FC<CustomSliderProps> = ({
   fade,
   slideIndex = 0,
   autoplay = true,
+  draggable = true,
 }) => {
   const [thing, setThing] = useState('thing1');
   const settings = {
@@ -48,6 +50,7 @@ const CustomSlider: React.FC<CustomSliderProps> = ({
     className,
     slide,
     slideWidth: width,
+    draggable,
     beforeChange: (oldIndex, newIndex) => {
       switch (newIndex) {
         case 0:

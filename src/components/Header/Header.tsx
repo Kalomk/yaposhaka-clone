@@ -11,13 +11,23 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import FeedBack from '../FeedBack/FeedBack';
 import { useClickOutside } from '../../hooks/useClickOutside';
 import data from '../../data/menu';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
+type ConditionalWrapperProps = {
+  condition: boolean;
+  children?: JSX.Element;
+  wrapper: any;
+};
+
+const ConditionalWrapper: React.FC<ConditionalWrapperProps> = ({ condition, wrapper, children }) =>
+  condition ? wrapper(children) : children;
 
 const Header = () => {
   const [current, setCurrent] = useState('');
   const isLargerThan1024 = useMediaQuery('(max-width:1024px');
   const [mobileref, openMenu, setOpenMenu] = useClickOutside(false);
   const [feedBackRef, openModal, setOpenModal] = useClickOutside(false);
+  const location = useLocation();
 
   let timer: number | ReturnType<typeof setTimeout> = 0;
   const TIMEOUT: number = 500;
@@ -33,6 +43,29 @@ const Header = () => {
     clearTimeout(timer);
   };
 
+  const logoJsx = (
+    <strong className="logo">
+      <meta itemProp="name" content="Япошка - Итальяни" />
+      <meta itemProp="email" content="info@yaposhka.com.ua>" />
+      <meta itemProp="telephone" content="2200" />
+      <meta itemProp="url" content="https://www.yaposhka.kh.ua/ua/" />
+      <img
+        className="desktop-logo"
+        src="https://www.yaposhka.kh.ua/media/logo/stores/2/file.png"
+        alt="Япошка - Итальяни"
+        width="194"
+        height="79"
+      ></img>
+      <img
+        className="mobile-logo"
+        src="https://www.yaposhka.kh.ua/media/shop/stores/2/file_1.png"
+        alt="Япошка - Итальяни"
+        width="189"
+        height="64"
+      ></img>
+    </strong>
+  );
+
   return (
     <header className="header">
       <div className="header__container container">
@@ -40,26 +73,12 @@ const Header = () => {
           <span></span>
         </div>
         <div className="header__logo">
-          <strong className="logo">
-            <meta itemProp="name" content="Япошка - Итальяни" />
-            <meta itemProp="email" content="info@yaposhka.com.ua>" />
-            <meta itemProp="telephone" content="2200" />
-            <meta itemProp="url" content="https://www.yaposhka.kh.ua/ua/" />
-            <img
-              className="desktop-logo"
-              src="https://www.yaposhka.kh.ua/media/logo/stores/2/file.png"
-              alt="Япошка - Итальяни"
-              width="194"
-              height="79"
-            ></img>
-            <img
-              className="mobile-logo"
-              src="https://www.yaposhka.kh.ua/media/shop/stores/2/file_1.png"
-              alt="Япошка - Итальяни"
-              width="189"
-              height="64"
-            ></img>
-          </strong>
+          <ConditionalWrapper
+            condition={location.pathname !== '/'}
+            wrapper={(children) => <Link to={'/'}>{children}</Link>}
+          >
+            {logoJsx}
+          </ConditionalWrapper>
         </div>
         <div className="header__secondary secondary-header">
           <ul className="secondary-header__list">

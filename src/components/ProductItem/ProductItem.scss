@@ -220,3 +220,32 @@
   line-height: 24px;
   color: #fff;
 }
+
+.top-labels-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  max-width: 75%;
+  .label-new {
+    background: #5a4099;
+  }
+  .label-royal {
+    background: #d62d88;
+  }
+  .label-hit {
+    background: #e50278;
+  }
+  .item-label {
+    display: inline-block;
+    min-width: 80px;
+    padding: 11px 18px 9px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+  }
+}
